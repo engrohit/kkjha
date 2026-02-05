@@ -3,7 +3,7 @@ import { FaPalette, FaSun, FaMoon } from 'react-icons/fa';
 import Dropdown from './Dropdown.jsx';
 
 const ThemeSwitcher = () => {
-    const { theme, setTheme, themes, mode, toggleMode } = useTheme();
+    const { theme, setTheme, themes, mode, toggleMode, contrast, setContrast } = useTheme();
 
     return (
         <Dropdown
@@ -70,6 +70,43 @@ const ThemeSwitcher = () => {
                                 </button>
                             ))}
                         </div>
+                    </div>
+
+                    {/* Contrast Adjuster */}
+                    <div>
+                        <span className="text-xs font-semibold text-slate-500 mb-2 block">Contrast Level</span>
+                        <div className="flex bg-slate-100 dark:bg-white/5 rounded-lg p-1">
+                            <button
+                                onClick={() => setContrast(100)}
+                                className={`flex-1 px-2 py-1.5 rounded-md text-xs font-medium transition-all ${contrast === 100
+                                        ? 'bg-white dark:bg-slate-700 shadow text-slate-900 dark:text-white'
+                                        : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                                    }`}
+                            >
+                                Normal
+                            </button>
+                            <button
+                                onClick={() => setContrast(115)}
+                                className={`flex-1 px-2 py-1.5 rounded-md text-xs font-medium transition-all ${contrast === 115
+                                        ? 'bg-white dark:bg-slate-700 shadow text-slate-900 dark:text-white'
+                                        : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                                    }`}
+                            >
+                                High
+                            </button>
+                            <button
+                                onClick={() => setContrast(130)}
+                                className={`flex-1 px-2 py-1.5 rounded-md text-xs font-medium transition-all ${contrast === 130
+                                        ? 'bg-white dark:bg-slate-700 shadow text-slate-900 dark:text-white'
+                                        : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                                    }`}
+                            >
+                                Maximum
+                            </button>
+                        </div>
+                        <p className="text-xs text-slate-400 dark:text-slate-500 mt-1.5 text-center">
+                            {contrast}% contrast
+                        </p>
                     </div>
                 </div>
             )}

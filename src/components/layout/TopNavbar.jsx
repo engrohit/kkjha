@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaTelegramPlane, FaInstagram, FaYoutube, FaSearch, FaBell, FaGlobe, FaTimes, FaBriefcase, FaPenNib, FaNewspaper, FaCogs, FaStore, FaLinkedinIn, FaShare, FaHome, FaBars } from 'react-icons/fa';
 import ThemeSwitcher from '../ui/ThemeSwitcher.jsx';
 import Dropdown from '../ui/Dropdown.jsx';
+import NestedDropdown from '../ui/NestedDropdown.jsx';
 
 const TopNavbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -162,7 +163,12 @@ const TopNavbar = () => {
                         <span className="hidden sm:inline text-sm">Subscribe</span>
                     </button>
 
-                    {/* Menu Dropdown (Pages) */}
+                    {/* Theme Switcher */}
+                    <div className={`${isSearchOpen ? 'hidden md:block' : 'block'}`}>
+                        <ThemeSwitcher />
+                    </div>
+
+                    {/* Menu Dropdown with Nested Submenus */}
                     <Dropdown
                         align="right"
                         trigger={
@@ -174,8 +180,69 @@ const TopNavbar = () => {
                             </div>
                         }
                     >
-                        <div className="p-2 w-48 grid grid-cols-1 gap-1">
-                            {pageLinks.map((page, index) => (
+                        <div className="p-2 w-56 grid grid-cols-1 gap-1">
+                            {/* Home Link */}
+                            <Link
+                                to="/"
+                                className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all hover:text-green-600"
+                            >
+                                <FaHome />
+                                <span className="text-sm font-medium">Home</span>
+                            </Link>
+
+                            {/* Work Nested Dropdown */}
+                            <NestedDropdown
+                                label="Work Menu"
+                                icon={<FaBriefcase />}
+                            >
+                                <div className="p-2 grid grid-cols-1 gap-1">
+                                    {workLinks.map((work, index) => (
+                                        <Link
+                                            key={index}
+                                            to={work.href}
+                                            className={`flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all ${work.color}`}
+                                        >
+                                            {work.icon}
+                                            <span className="text-sm font-medium">{work.label}</span>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </NestedDropdown>
+
+                            {/* Connect Nested Dropdown */}
+                            <NestedDropdown
+                                label="Connect Menu"
+                                icon={<FaGlobe />}
+                            >
+                                <div className="p-2 grid grid-cols-1 gap-1">
+                                    {socialLinks.map((social, index) => (
+                                        <a
+                                            key={index}
+                                            href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all ${social.color}`}
+                                        >
+                                            {social.icon}
+                                            <span className="text-sm font-medium">{social.label}</span>
+                                        </a>
+                                    ))}
+                                    <button
+                                        onClick={handleShare}
+                                        className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all border-t border-slate-200 dark:border-white/10 mt-1 pt-2 group"
+                                        style={{ color: 'var(--accent-primary)' }}
+                                    >
+                                        <FaShare className="group-hover:animate-pulse" />
+                                        <span className="text-sm font-medium">Share</span>
+                                    </button>
+                                </div>
+                            </NestedDropdown>
+
+                            {/* Divider */}
+                            <div className="h-px bg-slate-200 dark:bg-white/10 my-1"></div>
+
+                            {/* Other Page Links */}
+                            {pageLinks.slice(1).map((page, index) => (
                                 <Link
                                     key={index}
                                     to={page.href}
@@ -187,73 +254,6 @@ const TopNavbar = () => {
                             ))}
                         </div>
                     </Dropdown>
-
-                    {/* Work Experience Dropdown */}
-                    <Dropdown
-                        align="right"
-                        trigger={
-                            <div className={`${isSearchOpen ? 'hidden md:flex' : 'flex'} items-center gap-2 px-2 py-1.5 md:px-4 md:py-2 rounded-full border border-transparent md:border-slate-200 md:dark:border-white/10 md:hover:border-green-500 md:dark:hover:border-green-400 md:bg-white/50 md:dark:bg-white/5 transition-all cursor-pointer group`}>
-                                <div className="w-9 h-9 md:w-auto md:h-auto flex items-center justify-center rounded-full bg-slate-100 md:bg-transparent dark:bg-white/10 md:dark:bg-transparent">
-                                    <FaBriefcase className="text-slate-500 dark:text-slate-400 group-hover:text-green-600 dark:group-hover:text-green-400 group-hover:animate-[bellShake_0.5s_ease-in-out] transition-colors" />
-                                </div>
-                                <span className="hidden md:block text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-green-600 dark:group-hover:text-green-400">Work</span>
-                            </div>
-                        }
-                    >
-                        <div className="p-2 w-56 grid grid-cols-1 gap-1">
-                            {workLinks.map((work, index) => (
-                                <Link
-                                    key={index}
-                                    to={work.href}
-                                    className={`flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all ${work.color}`}
-                                >
-                                    {work.icon}
-                                    <span className="text-sm font-medium">{work.label}</span>
-                                </Link>
-                            ))}
-                        </div>
-                    </Dropdown>
-
-                    {/* Connect Dropdown with Share */}
-                    <Dropdown
-                        align="right"
-                        trigger={
-                            <div className={`${isSearchOpen ? 'hidden md:flex' : 'flex'} items-center gap-2 px-2 py-1.5 md:px-4 md:py-2 rounded-full border border-transparent md:border-slate-200 md:dark:border-white/10 md:hover:border-green-500 md:dark:hover:border-green-400 md:bg-white/50 md:dark:bg-white/5 transition-all cursor-pointer group`}>
-                                <div className="w-9 h-9 md:w-auto md:h-auto flex items-center justify-center rounded-full bg-slate-100 md:bg-transparent dark:bg-white/10 md:dark:bg-transparent">
-                                    <FaGlobe className="text-slate-500 dark:text-slate-400 group-hover:text-green-600 dark:group-hover:text-green-400 group-hover:animate-spin transition-colors" />
-                                </div>
-                                <span className="hidden md:block text-sm font-medium text-slate-600 dark:text-slate-300 group-hover:text-green-600 dark:group-hover:text-green-400">Connect</span>
-                            </div>
-                        }
-                    >
-                        <div className="p-2 w-48 grid grid-cols-1 gap-1">
-                            {socialLinks.map((social, index) => (
-                                <a
-                                    key={index}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all ${social.color}`}
-                                >
-                                    {social.icon}
-                                    <span className="text-sm font-medium">{social.label}</span>
-                                </a>
-                            ))}
-                            <button
-                                onClick={handleShare}
-                                className="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-all border-t border-slate-200 dark:border-white/10 mt-1 pt-2 group"
-                                style={{ color: 'var(--accent-primary)' }}
-                            >
-                                <FaShare className="group-hover:animate-pulse" />
-                                <span className="text-sm font-medium">Share</span>
-                            </button>
-                        </div>
-                    </Dropdown>
-
-                    {/* Theme Switcher */}
-                    <div className={`${isSearchOpen ? 'hidden md:block' : 'block'}`}>
-                        <ThemeSwitcher />
-                    </div>
                 </div>
             </div>
 

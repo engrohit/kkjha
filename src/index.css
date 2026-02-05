@@ -600,4 +600,80 @@ body.light .input-field:focus {
 
 body.light .input-field::placeholder {
   color: var(--text-tertiary);
+}/* ============================================
+   CONTRAST LEVEL ADJUSTMENTS
+   ============================================ */
+
+/* High Contrast Mode (115%) */
+body.contrast-high.light {
+    /* Enhance text darkness */
+    --text-primary: color-mix(in srgb, var(--text-primary) 85%, black 15%);
+    --text-secondary: color-mix(in srgb, var(--text-secondary) 85%, black 15%);
+
+    /* Stronger borders */
+    --border-color: color-mix(in srgb, var(--border-color) 70%, currentColor 30%);
+    --border-subtle: color-mix(in srgb, var(--border-subtle) 70%, currentColor 30%);
+
+    /* Enhanced shadows */
+    --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.18);
+    --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+body.contrast-high.dark {
+    /* Brighter text */
+    --text-primary: rgba(255, 255, 255, 0.98);
+    --text-secondary: rgba(255, 255, 255, 0.85);
+
+    /* Stronger borders */
+    --border-color: rgba(255, 255, 255, 0.15);
+
+    /* Enhanced glow */
+    filter: brightness(1.08);
+}
+
+/* Maximum Contrast Mode (130%) */
+body.contrast-maximum.light {
+    /* Maximum text darkness */
+    --text-primary: #000000;
+    --text-secondary: color-mix(in srgb, var(--text-secondary) 70%, black 30%);
+    --text-tertiary: color-mix(in srgb, var(--text-tertiary) 70%, black 30%);
+
+    /* Very strong borders */
+    --border-color: color-mix(in srgb, var(--border-color) 50%, currentColor 50%);
+    --border-subtle: color-mix(in srgb, var(--border-subtle) 50%, currentColor 50%);
+
+    /* Maximum shadows */
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.3);
+
+    /* Slightly darker backgrounds for more separation */
+    --bg-tertiary: color-mix(in srgb, var(--bg-tertiary) 95%, black 5%);
+}
+
+body.contrast-maximum.dark {
+    /* Pure white text */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.95);
+    --text-tertiary: rgba(255, 255, 255, 0.75);
+
+    /* Very strong borders */
+    --border-color: rgba(255, 255, 255, 0.2);
+
+    /* Maximum brightness and glow */
+    filter: brightness(1.15) contrast(1.1);
+}
+
+/* Smooth transitions for contrast changes */
+body {
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure text remains crisp with contrast adjustments */
+body.contrast-high,
+body.contrast-maximum {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }

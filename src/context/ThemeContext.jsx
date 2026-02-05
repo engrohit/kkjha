@@ -19,6 +19,14 @@ export const ThemeProvider = ({ children }) => {
         }
     });
 
+    const [contrast, setContrast] = useState(() => {
+        try {
+            return parseInt(localStorage.getItem('kkj-contrast')) || 100;
+        } catch (e) {
+            return 100;
+        }
+    });
+
     useEffect(() => {
         const root = document.body;
         root.classList.remove('theme-cyber', 'theme-royal', 'theme-emerald', 'theme-crimson');
@@ -40,6 +48,29 @@ export const ThemeProvider = ({ children }) => {
         }
     }, [theme, mode]);
 
+    useEffect(() => {
+        const root = document.body;
+        // Apply contrast as CSS variable
+        root.style.setProperty('--contrast-level', contrast / 100);
+
+        // Apply contrast class for additional styling
+        root.classList.remove('contrast-normal', 'contrast-high', 'contrast-maximum');
+        if (contrast === 115) {
+            root.classList.add('contrast-high');
+        } else if (contrast === 130) {
+            root.classList.add('contrast-maximum');
+        } else {
+            root.classList.add('contrast-normal');
+        }
+
+        // Persist to localStorage
+        try {
+            localStorage.setItem('kkj-contrast', contrast);
+        } catch (e) {
+            console.warn('LocalStorage not available');
+        }
+    }, [contrast]);
+
     const toggleMode = () => {
         setMode(prev => prev === 'dark' ? 'light' : 'dark');
     };
@@ -52,7 +83,7 @@ export const ThemeProvider = ({ children }) => {
     ];
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme, mode, toggleMode, themes }}>
+        <ThemeContext.Provider value={{ theme, setTheme, mode, toggleMode, themes, contrast, setContrast }}>
             {children}
         </ThemeContext.Provider>
     );
