@@ -4,11 +4,19 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => {
-        return localStorage.getItem('kkj-theme') || 'cyber';
+        try {
+            return localStorage.getItem('kkj-theme') || 'cyber';
+        } catch (e) {
+            return 'cyber';
+        }
     });
 
     const [mode, setMode] = useState(() => {
-        return localStorage.getItem('kkj-mode') || 'dark';
+        try {
+            return localStorage.getItem('kkj-mode') || 'dark';
+        } catch (e) {
+            return 'dark';
+        }
     });
 
     useEffect(() => {
@@ -24,8 +32,12 @@ export const ThemeProvider = ({ children }) => {
             root.classList.add('dark');
         }
 
-        localStorage.setItem('kkj-theme', theme);
-        localStorage.setItem('kkj-mode', mode);
+        try {
+            localStorage.setItem('kkj-theme', theme);
+            localStorage.setItem('kkj-mode', mode);
+        } catch (e) {
+            console.warn('LocalStorage not available');
+        }
     }, [theme, mode]);
 
     const toggleMode = () => {
