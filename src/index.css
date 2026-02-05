@@ -1,0 +1,249 @@
+@import "tailwindcss";
+
+:root {
+  /* Default Theme: Cyber Future */
+  --bg-primary: #0a192f;
+  --bg-secondary: #112240;
+  --text-primary: #8892b0;
+  --text-secondary: #a8b2d1;
+  --text-highlight: #ffffff;
+  --accent-primary: #007bff;
+  --accent-glow: #00f3ff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* Theme: Royal Velvet */
+body.theme-royal {
+  --bg-primary: #1a0b2e;
+  --bg-secondary: #2d1b4e;
+  --text-primary: #d1bfa7;
+  --text-secondary: #e0c9a6;
+  --text-highlight: #ffffff;
+  --accent-primary: #ff00ff;
+  --accent-glow: #ffd700;
+  --border-color: rgba(255, 215, 0, 0.1);
+  --glass-bg: rgba(255, 215, 0, 0.05);
+}
+
+/* Theme: Emerald City */
+body.theme-emerald {
+  --bg-primary: #051c12;
+  --bg-secondary: #0a2f1f;
+  --text-primary: #8fac9a;
+  --text-secondary: #a3c9b5;
+  --text-highlight: #ffffff;
+  --accent-primary: #50c878;
+  --accent-glow: #ccff00;
+  --border-color: rgba(80, 200, 120, 0.1);
+  --glass-bg: rgba(80, 200, 120, 0.05);
+}
+
+/* Theme: Crimson Night */
+body.theme-crimson {
+  --bg-primary: #1a0505;
+  --bg-secondary: #2f0a0a;
+  --text-primary: #b08888;
+  --text-secondary: #d1a8a8;
+  --text-highlight: #ffffff;
+  --accent-primary: #dc143c;
+  --accent-glow: #ff4500;
+  --border-color: rgba(220, 20, 60, 0.1);
+  --glass-bg: rgba(220, 20, 60, 0.05);
+}
+
+/* Light Mode Overrides - Only backgrounds and text, preserve theme accents */
+body.light {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --text-primary: #0a192f;
+  --text-secondary: #4a5568;
+  --text-highlight: #000000;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  /* accent-primary and accent-glow are inherited from theme classes */
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 50% 50%, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  background-size: 200% 200%;
+  animation: bgPulse 15s ease infinite;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@keyframes bgPulse {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Glassmorphism Utilities (optional if not using Tailwind classes for everything) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%) skewX(12deg);
+  }
+
+  100% {
+    transform: translateX(150%) skewX(12deg);
+  }
+}
+
+@keyframes bellShake {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: rotate(-10deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Theme-Reactive Logo RGB Effects */
+.logo-theme-effect {
+  position: relative;
+  filter: brightness(1.1) contrast(1.2);
+  transition: filter 0.5s ease;
+}
+
+/* Reduce effect intensity in light mode */
+body.light .logo-theme-effect {
+  filter: brightness(0.95) contrast(1.3) saturate(1.2);
+}
+
+.logo-theme-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-primary);
+  mix-blend-mode: color;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.5s ease, background 0.5s ease;
+}
+
+/* Less opacity in light mode for clarity */
+body.light .logo-theme-effect::before {
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+}
+
+.logo-theme-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: opacity 0.5s ease, background 0.5s ease;
+}
+
+body.light .logo-theme-effect::after {
+  opacity: 0.1;
+}
+
+.logo-theme-effect:hover::before {
+  opacity: 0.5;
+}
+
+body.light .logo-theme-effect:hover::before {
+  opacity: 0.25;
+}
+
+.logo-theme-effect:hover::after {
+  opacity: 0.4;
+}
+
+body.light .logo-theme-effect:hover::after {
+  opacity: 0.2;
+}
+
+/* Icon RGB effect (smaller, more subtle) */
+.icon-theme-effect {
+  position: relative;
+  filter: brightness(1.05) saturate(1.2);
+  transition: filter 0.3s ease;
+}
+
+.icon-theme-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-glow);
+  mix-blend-mode: overlay;
+  opacity: 0.25;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.icon-theme-effect:hover {
+  filter: brightness(1.15) saturate(1.4);
+}
+
+.icon-theme-effect:hover::before {
+  opacity: 0.4;
+}
