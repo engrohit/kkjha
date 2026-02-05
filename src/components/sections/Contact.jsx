@@ -3,14 +3,14 @@ import Section from '../ui/Section.jsx';
 
 const Contact = () => {
     return (
-        <Section id="contact" className="bg-slate-50 dark:bg-slate-900 pb-32">
+        <Section id="contact" className="section-primary pb-32">
             <div className="w-full max-w-2xl text-center">
-                <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-8">Initiate Uplink</h2>
+                <h2 className="text-4xl font-bold text-primary-enhanced mb-8">Initiate Uplink</h2>
 
                 <motion.form
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    className="glass-panel p-8 rounded-2xl text-left space-y-6 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 shadow-lg"
+                    className="card-elevated p-8 rounded-2xl text-left space-y-6 transition-all duration-300"
                     style={{
                         boxShadow: '0 0 30px var(--accent-glow)'
                     }}
@@ -24,18 +24,7 @@ const Contact = () => {
                         </label>
                         <input
                             type="text"
-                            className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 rounded p-3 text-slate-900 dark:text-white focus:outline-none transition-all"
-                            style={{
-                                borderColor: 'var(--border-color)'
-                            }}
-                            onFocus={(e) => {
-                                e.target.style.borderColor = 'var(--accent-glow)';
-                                e.target.style.boxShadow = '0 0 10px var(--accent-glow)';
-                            }}
-                            onBlur={(e) => {
-                                e.target.style.borderColor = 'var(--border-color)';
-                                e.target.style.boxShadow = 'none';
-                            }}
+                            className="input-field w-full rounded p-3"
                             placeholder="Name or Callsign"
                         />
                     </div>
@@ -48,18 +37,7 @@ const Contact = () => {
                         </label>
                         <input
                             type="email"
-                            className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 rounded p-3 text-slate-900 dark:text-white focus:outline-none transition-all"
-                            style={{
-                                borderColor: 'var(--border-color)'
-                            }}
-                            onFocus={(e) => {
-                                e.target.style.borderColor = 'var(--accent-glow)';
-                                e.target.style.boxShadow = '0 0 10px var(--accent-glow)';
-                            }}
-                            onBlur={(e) => {
-                                e.target.style.borderColor = 'var(--border-color)';
-                                e.target.style.boxShadow = 'none';
-                            }}
+                            className="input-field w-full rounded p-3"
                             placeholder="artistkkjha@gmail.com"
                         />
                     </div>
@@ -72,37 +50,14 @@ const Contact = () => {
                         </label>
                         <textarea
                             rows="4"
-                            className="w-full bg-slate-100 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 rounded p-3 text-slate-900 dark:text-white focus:outline-none transition-all"
-                            style={{
-                                borderColor: 'var(--border-color)'
-                            }}
-                            onFocus={(e) => {
-                                e.target.style.borderColor = 'var(--accent-glow)';
-                                e.target.style.boxShadow = '0 0 10px var(--accent-glow)';
-                            }}
-                            onBlur={(e) => {
-                                e.target.style.borderColor = 'var(--border-color)';
-                                e.target.style.boxShadow = 'none';
-                            }}
+                            className="input-field w-full rounded p-3"
                             placeholder="Transmission content..."
                         />
                     </div>
 
                     <button
                         type="submit"
-                        className="w-full py-4 rounded-lg text-white font-bold tracking-wider transition-all uppercase"
-                        style={{
-                            background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-glow))',
-                            boxShadow: '0 0 20px var(--accent-glow)'
-                        }}
-                        onMouseEnter={(e) => {
-                            e.target.style.transform = 'translateY(-2px)';
-                            e.target.style.boxShadow = '0 0 30px var(--accent-glow)';
-                        }}
-                        onMouseLeave={(e) => {
-                            e.target.style.transform = 'translateY(0)';
-                            e.target.style.boxShadow = '0 0 20px var(--accent-glow)';
-                        }}
+                        className="btn-primary w-full py-4 rounded-lg font-bold tracking-wider uppercase"
                     >
                         Send Transmission
                     </button>

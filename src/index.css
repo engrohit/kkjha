@@ -377,3 +377,227 @@ body.light .logo-theme-effect:hover::after {
 .icon-theme-effect:hover::before {
   opacity: 0.4;
 }
+
+/* Enhanced Dark Mode Section Backgrounds */
+.section-primary {
+  background: var(--bg-tertiary, #f8fbfd);
+}
+
+body.dark .section-primary {
+  background: radial-gradient(ellipse at top, var(--bg-secondary) 0%, var(--bg-primary) 50%);
+}
+
+body.light .section-primary {
+  background: var(--bg-tertiary);
+}
+
+.section-secondary {
+  background: var(--bg-secondary, #ffffff);
+}
+
+body.dark .section-secondary {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+body.light .section-secondary {
+  background: var(--bg-secondary);
+}
+
+.section-gradient {
+  background: transparent;
+}
+
+body.dark .section-gradient {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+}
+
+body.light .section-gradient {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Enhanced Card Styles for Dark Mode */
+.card-elevated {
+  background: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.1));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .card-elevated {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+}
+
+body.dark .card-elevated:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-primary);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4), 0 0 24px var(--accent-glow);
+  transform: translateY(-4px);
+}
+
+body.light .card-elevated {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+body.light .card-elevated:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Text Enhancements */
+.text-primary-enhanced {
+  color: var(--text-primary, #1a2332);
+}
+
+body.dark .text-primary-enhanced {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.light .text-primary-enhanced {
+  color: var(--text-primary);
+}
+
+.text-secondary-enhanced {
+  color: var(--text-secondary, #4a5f7a);
+}
+
+body.dark .text-secondary-enhanced {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.light .text-secondary-enhanced {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-tertiary, #6b7f99);
+}
+
+body.dark .text-muted {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.light .text-muted {
+  color: var(--text-tertiary);
+}
+
+/* Button Enhancements */
+.btn-primary {
+  background: var(--accent-primary, #0066cc);
+  border: 1px solid var(--accent-primary, #0066cc);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-glow));
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 4px 16px var(--accent-glow);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .btn-primary:hover {
+  box-shadow: 0 6px 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+body.light .btn-primary {
+  background: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  box-shadow: var(--shadow-md);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.light .btn-primary:hover {
+  background: var(--accent-secondary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-primary, #0066cc);
+  color: var(--accent-primary, #0066cc);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+body.light .btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-primary);
+  color: var(--accent-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.light .btn-outline:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-secondary);
+}
+
+/* Input Field Enhancements */
+.input-field {
+  background: var(--bg-tertiary, #f8fbfd);
+  border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.1));
+  color: var(--text-primary, #1a2332);
+  transition: all 0.3s ease;
+}
+
+body.dark .input-field {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+body.dark .input-field:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-glow);
+  box-shadow: 0 0 16px var(--accent-glow);
+  outline: none;
+}
+
+body.dark .input-field::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body.light .input-field {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+body.light .input-field:focus {
+  background: var(--bg-secondary);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+}
+
+body.light .input-field::placeholder {
+  color: var(--text-tertiary);
+}

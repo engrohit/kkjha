@@ -34,7 +34,7 @@ const works = [
 
 const Resources = () => {
     return (
-        <Section id="content" className="bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950">
+        <Section id="content" className="section-secondary">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-6xl">
 
                 {/* Work History */}
@@ -44,7 +44,7 @@ const Resources = () => {
                             className="text-2xl transition-colors"
                             style={{ color: 'var(--accent-glow)' }}
                         />
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Work History</h2>
+                        <h2 className="text-3xl font-bold text-primary-enhanced">Work History</h2>
                     </div>
 
                     <div className="flex flex-col gap-4">
@@ -54,17 +54,21 @@ const Resources = () => {
                                 initial={{ x: -20, opacity: 0 }}
                                 whileInView={{ x: 0, opacity: 1 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="flex items-center justify-between p-4 border-l-2 border-slate-300 dark:border-slate-700 hover:border-[var(--accent-primary)] bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer rounded-r-lg"
+                                className="card-elevated flex items-center justify-between p-4 border-l-4 rounded-r-lg cursor-pointer transition-all duration-300"
+                                style={{
+                                    borderLeftColor: 'var(--accent-primary)'
+                                }}
                             >
                                 <div>
-                                    <h3 className="text-lg text-slate-900 dark:text-white font-medium">{job.title}</h3>
-                                    <p className="text-sm text-slate-600 dark:text-slate-400">{job.location}</p>
+                                    <h3 className="text-lg text-primary-enhanced font-medium">{job.title}</h3>
+                                    <p className="text-sm text-secondary-enhanced">{job.location}</p>
                                 </div>
                                 <span
-                                    className="text-xs font-mono px-2 py-1 rounded"
+                                    className="text-xs font-mono px-3 py-1 rounded-full"
                                     style={{
                                         color: 'var(--accent-primary)',
-                                        backgroundColor: 'var(--glass-bg)'
+                                        backgroundColor: 'var(--glass-bg)',
+                                        border: '1px solid var(--accent-primary)'
                                     }}
                                 >
                                     {job.year}
@@ -81,7 +85,7 @@ const Resources = () => {
                             className="text-2xl transition-colors"
                             style={{ color: 'var(--accent-glow)' }}
                         />
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Notable Works</h2>
+                        <h2 className="text-3xl font-bold text-primary-enhanced">Notable Works</h2>
                     </div>
 
                     <div className="space-y-4">
@@ -94,17 +98,18 @@ const Resources = () => {
                                 initial={{ x: 20, opacity: 0 }}
                                 whileInView={{ x: 0, opacity: 1 }}
                                 transition={{ delay: idx * 0.1 }}
-                                className="flex items-center justify-between group cursor-pointer"
+                                className="flex items-center justify-between group cursor-pointer card-elevated p-4 rounded-lg"
                             >
-                                <div className="flex-1 border-b border-slate-300 dark:border-slate-700 pb-2 group-hover:border-[var(--accent-primary)] transition-colors">
-                                    <h4 className="text-lg text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                                <div className="flex-1">
+                                    <h4 className="text-lg text-secondary-enhanced group-hover:text-primary-enhanced transition-colors">
                                         {work.title}
                                     </h4>
                                 </div>
                                 <div
-                                    className="ml-4 relative inline-flex items-center h-6 rounded-full w-11 transition-all bg-slate-300 dark:bg-slate-700"
+                                    className="ml-4 relative inline-flex items-center h-6 rounded-full w-11 transition-all"
                                     style={{
-                                        backgroundColor: 'var(--glass-bg)'
+                                        backgroundColor: 'var(--glass-bg)',
+                                        border: '1px solid var(--accent-primary)'
                                     }}
                                 >
                                     <span className="sr-only">Listen</span>
