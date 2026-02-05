@@ -26,10 +26,6 @@ function ScrollToTop() {
 }
 
 function App() {
-  useEffect(() => {
-    document.title = "DEPLOYMENT_SUCCESS";
-  }, []);
-
   return (
     <ThemeProvider>
       <div className="selection:bg-neon-cyan selection:text-deep-navy min-h-screen">
