@@ -1,35 +1,4 @@
-<!-- THIS IS THE ROOT INDEX.HTML -->
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="./favicon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DEPLOYMENT_FAIL</title>
-  <script>
-    window.onerror = function (msg, url, line, col, error) {
-      var div = document.createElement('div');
-      div.style.color = 'red';
-      div.style.position = 'fixed';
-      div.style.top = '50px';
-      div.style.left = '0';
-      div.style.zIndex = '9999';
-      div.style.background = 'white';
-      div.innerHTML = 'ERROR: ' + msg + ' at ' + url + ':' + line;
-      document.body.appendChild(div);
-    };
-    window.onunhandledrejection = function (event) {
-      var div = document.createElement('div');
-      div.style.color = 'orange';
-      div.style.position = 'fixed';
-      div.style.top = '100px';
-      div.style.left = '0';
-      div.style.zIndex = '9999';
-      div.style.background = 'white';
-      div.innerHTML = 'PROMISE ERROR: ' + event.reason;
-      document.body.appendChild(div);
-    };
-  </script>
+<title>Krishan Kant Jha | Portfolio</title>
 </head>
 
 <body>
