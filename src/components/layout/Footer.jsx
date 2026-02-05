@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaLinkedinIn, FaTwitter, FaInstagram, FaFacebookF, FaTelegramPlane, FaHeart, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedinIn, FaInstagram, FaYoutube, FaGlobe, FaHeart, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -20,11 +20,11 @@ const Footer = () => {
     ];
 
     const socialLinks = [
-        { icon: <FaLinkedinIn />, href: 'https://linkedin.com/in/krishankantjha', label: 'LinkedIn' },
-        { icon: <FaTwitter />, href: 'https://twitter.com/krishankantjha', label: 'Twitter' },
-        { icon: <FaInstagram />, href: 'https://instagram.com/krishankantjha', label: 'Instagram' },
-        { icon: <FaFacebookF />, href: 'https://www.facebook.com/krishan.kant.jha.435595', label: 'Facebook' },
-        { icon: <FaTelegramPlane />, href: 'https://t.me/RapidReadout', label: 'Telegram' },
+        { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/in/krishan-kant-jha-a3b6a0163/', label: 'LinkedIn' },
+        { icon: <FaInstagram />, href: 'https://www.instagram.com/artistkkjha/', label: 'Instagram' },
+        { icon: <FaYoutube />, href: 'https://www.youtube.com/@artistkkjha', label: 'YouTube' },
+        { icon: <FaGlobe />, href: 'https://www.threads.com/@krishanjha93?xmt=AQF0e-MGlflipWPekNfHCXs36Rj_hx243bqyHrMf5jRYQMc', label: 'Threads' },
+        { icon: <FaGlobe />, href: 'https://adbl.co/postcard', label: 'Audible' },
     ];
 
     return (

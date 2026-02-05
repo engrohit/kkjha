@@ -2,72 +2,72 @@
 
 :root {
   /* Default Theme: Cyber Future */
-  --bg-primary: #0a192f;
-  --bg-secondary: #112240;
-  --text-primary: #8892b0;
-  --text-secondary: #a8b2d1;
+  --bg-primary-raw: #0a192f;
+  --bg-secondary-raw: #112240;
+  --text-primary-raw: #8892b0;
+  --text-secondary-raw: #a8b2d1;
   --text-highlight: #ffffff;
   --accent-primary: #007bff;
   --accent-glow: #00f3ff;
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-raw: rgba(255, 255, 255, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.05);
 }
 
 /* Theme: Royal Velvet */
 body.theme-royal {
-  --bg-primary: #1a0b2e;
-  --bg-secondary: #2d1b4e;
-  --text-primary: #d1bfa7;
-  --text-secondary: #e0c9a6;
+  --bg-primary-raw: #1a0b2e;
+  --bg-secondary-raw: #2d1b4e;
+  --text-primary-raw: #d1bfa7;
+  --text-secondary-raw: #e0c9a6;
   --text-highlight: #ffffff;
   --accent-primary: #ff00ff;
   --accent-glow: #ffd700;
-  --border-color: rgba(255, 215, 0, 0.1);
+  --border-color-raw: rgba(255, 215, 0, 0.1);
   --glass-bg: rgba(255, 215, 0, 0.05);
 }
 
 /* Theme: Emerald City */
 body.theme-emerald {
-  --bg-primary: #051c12;
-  --bg-secondary: #0a2f1f;
-  --text-primary: #8fac9a;
-  --text-secondary: #a3c9b5;
+  --bg-primary-raw: #051c12;
+  --bg-secondary-raw: #0a2f1f;
+  --text-primary-raw: #8fac9a;
+  --text-secondary-raw: #a3c9b5;
   --text-highlight: #ffffff;
   --accent-primary: #50c878;
   --accent-glow: #ccff00;
-  --border-color: rgba(80, 200, 120, 0.1);
+  --border-color-raw: rgba(80, 200, 120, 0.1);
   --glass-bg: rgba(80, 200, 120, 0.05);
 }
 
 /* Theme: Crimson Night */
 body.theme-crimson {
-  --bg-primary: #1a0505;
-  --bg-secondary: #2f0a0a;
-  --text-primary: #b08888;
-  --text-secondary: #d1a8a8;
+  --bg-primary-raw: #1a0505;
+  --bg-secondary-raw: #2f0a0a;
+  --text-primary-raw: #b08888;
+  --text-secondary-raw: #d1a8a8;
   --text-highlight: #ffffff;
   --accent-primary: #dc143c;
   --accent-glow: #ff4500;
-  --border-color: rgba(220, 20, 60, 0.1);
+  --border-color-raw: rgba(220, 20, 60, 0.1);
   --glass-bg: rgba(220, 20, 60, 0.05);
 }
 
 /* Light Mode - Cyber Future Theme */
 body.light.theme-cyber {
   /* Cool, professional blue-gray palette with high contrast */
-  --bg-primary: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f8fbfd;
-  --text-primary: #1a2332;
-  --text-secondary: #4a5f7a;
-  --text-tertiary: #6b7f99;
+  --bg-primary-raw: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
+  --bg-secondary-raw: #ffffff;
+  --bg-tertiary-raw: #f8fbfd;
+  --text-primary-raw: #1a2332;
+  --text-secondary-raw: #4a5f7a;
+  --text-tertiary-raw: #6b7f99;
   --text-highlight: #0a1628;
   --accent-primary: #0066cc;
   --accent-secondary: #0052a3;
   --accent-glow: #00a8ff;
   --accent-soft: #e6f2ff;
-  --border-color: rgba(0, 102, 204, 0.12);
-  --border-subtle: rgba(74, 95, 122, 0.08);
+  --border-color-raw: rgba(0, 102, 204, 0.12);
+  --border-subtle-raw: rgba(74, 95, 122, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.92);
   --shadow-sm: 0 1px 3px rgba(0, 102, 204, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 102, 204, 0.12);
@@ -77,19 +77,19 @@ body.light.theme-cyber {
 /* Light Mode - Royal Velvet Theme */
 body.light.theme-royal {
   /* Warm, luxurious purple-gold palette with rich tones */
-  --bg-primary: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #fdfbf8;
-  --text-primary: #2d1f3d;
-  --text-secondary: #5a4466;
-  --text-tertiary: #7a6580;
+  --bg-primary-raw: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
+  --bg-secondary-raw: #ffffff;
+  --bg-tertiary-raw: #fdfbf8;
+  --text-primary-raw: #2d1f3d;
+  --text-secondary-raw: #5a4466;
+  --text-tertiary-raw: #7a6580;
   --text-highlight: #1a0f26;
   --accent-primary: #9333ea;
   --accent-secondary: #7928ca;
   --accent-glow: #d4af37;
   --accent-soft: #f3e8ff;
-  --border-color: rgba(147, 51, 234, 0.12);
-  --border-subtle: rgba(90, 68, 102, 0.08);
+  --border-color-raw: rgba(147, 51, 234, 0.12);
+  --border-subtle-raw: rgba(90, 68, 102, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.92);
   --shadow-sm: 0 1px 3px rgba(147, 51, 234, 0.08);
   --shadow-md: 0 4px 12px rgba(147, 51, 234, 0.12);
@@ -99,19 +99,19 @@ body.light.theme-royal {
 /* Light Mode - Emerald City Theme */
 body.light.theme-emerald {
   /* Fresh, natural green palette with organic feel */
-  --bg-primary: linear-gradient(135deg, #f0f9f4 0%, #e8f5ed 100%);
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f7fcf9;
-  --text-primary: #1a3329;
-  --text-secondary: #2d5a47;
-  --text-tertiary: #4a7a63;
+  --bg-primary-raw: linear-gradient(135deg, #f0f9f4 0%, #e8f5ed 100%);
+  --bg-secondary-raw: #ffffff;
+  --bg-tertiary-raw: #f7fcf9;
+  --text-primary-raw: #1a3329;
+  --text-secondary-raw: #2d5a47;
+  --text-tertiary-raw: #4a7a63;
   --text-highlight: #0f1f18;
   --accent-primary: #10b981;
   --accent-secondary: #059669;
   --accent-glow: #84cc16;
   --accent-soft: #d1fae5;
-  --border-color: rgba(16, 185, 129, 0.12);
-  --border-subtle: rgba(45, 90, 71, 0.08);
+  --border-color-raw: rgba(16, 185, 129, 0.12);
+  --border-subtle-raw: rgba(45, 90, 71, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.92);
   --shadow-sm: 0 1px 3px rgba(16, 185, 129, 0.08);
   --shadow-md: 0 4px 12px rgba(16, 185, 129, 0.12);
@@ -121,19 +121,19 @@ body.light.theme-emerald {
 /* Light Mode - Crimson Night Theme */
 body.light.theme-crimson {
   /* Bold, energetic red palette with warm undertones */
-  --bg-primary: linear-gradient(135deg, #fef2f2 0%, #fce8e8 100%);
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #fff8f8;
-  --text-primary: #3d1a1a;
-  --text-secondary: #6b2d2d;
-  --text-tertiary: #8f4545;
+  --bg-primary-raw: linear-gradient(135deg, #fef2f2 0%, #fce8e8 100%);
+  --bg-secondary-raw: #ffffff;
+  --bg-tertiary-raw: #fff8f8;
+  --text-primary-raw: #3d1a1a;
+  --text-secondary-raw: #6b2d2d;
+  --text-tertiary-raw: #8f4545;
   --text-highlight: #260f0f;
   --accent-primary: #dc2626;
   --accent-secondary: #b91c1c;
   --accent-glow: #f97316;
   --accent-soft: #fee2e2;
-  --border-color: rgba(220, 38, 38, 0.12);
-  --border-subtle: rgba(107, 45, 45, 0.08);
+  --border-color-raw: rgba(220, 38, 38, 0.12);
+  --border-subtle-raw: rgba(107, 45, 45, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.92);
   --shadow-sm: 0 1px 3px rgba(220, 38, 38, 0.08);
   --shadow-md: 0 4px 12px rgba(220, 38, 38, 0.12);
@@ -143,6 +143,14 @@ body.light.theme-crimson {
 body {
   margin: 0;
   overflow-x: hidden;
+  --bg-primary: var(--bg-primary-raw);
+  --bg-secondary: var(--bg-secondary-raw);
+  --text-primary: var(--text-primary-raw);
+  --text-secondary: var(--text-secondary-raw);
+  --text-tertiary: var(--text-tertiary-raw);
+  --border-color: var(--border-color-raw);
+  --border-subtle: var(--border-subtle-raw);
+  --bg-tertiary: var(--bg-tertiary-raw);
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -610,12 +618,12 @@ body.light .input-field::placeholder {
 /* High Contrast Mode (115%) */
 body.contrast-high.light {
   /* Enhance text darkness */
-  --text-primary: color-mix(in srgb, var(--text-primary) 85%, black 15%);
-  --text-secondary: color-mix(in srgb, var(--text-secondary) 85%, black 15%);
+  --text-primary: color-mix(in srgb, var(--text-primary-raw) 85%, black 15%);
+  --text-secondary: color-mix(in srgb, var(--text-secondary-raw) 85%, black 15%);
 
   /* Stronger borders */
-  --border-color: color-mix(in srgb, var(--border-color) 70%, currentColor 30%);
-  --border-subtle: color-mix(in srgb, var(--border-subtle) 70%, currentColor 30%);
+  --border-color: color-mix(in srgb, var(--border-color-raw) 70%, currentColor 30%);
+  --border-subtle: color-mix(in srgb, var(--border-subtle-raw) 70%, currentColor 30%);
 
   /* Enhanced shadows */
   --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.15);
@@ -631,20 +639,21 @@ body.contrast-high.dark {
   /* Stronger borders */
   --border-color: rgba(255, 255, 255, 0.15);
 
-  /* Enhanced glow */
-  filter: brightness(1.08);
+  /* Brighter backgrounds (simulating brightness filter) */
+  --bg-primary: color-mix(in srgb, var(--bg-primary-raw) 92%, white 8%);
+  --bg-secondary: color-mix(in srgb, var(--bg-secondary-raw) 92%, white 8%);
 }
 
 /* Maximum Contrast Mode (130%) */
 body.contrast-maximum.light {
   /* Maximum text darkness */
   --text-primary: #000000;
-  --text-secondary: color-mix(in srgb, var(--text-secondary) 70%, black 30%);
-  --text-tertiary: color-mix(in srgb, var(--text-tertiary) 70%, black 30%);
+  --text-secondary: color-mix(in srgb, var(--text-secondary-raw) 70%, black 30%);
+  --text-tertiary: color-mix(in srgb, var(--text-tertiary-raw) 70%, black 30%);
 
   /* Very strong borders */
-  --border-color: color-mix(in srgb, var(--border-color) 50%, currentColor 50%);
-  --border-subtle: color-mix(in srgb, var(--border-subtle) 50%, currentColor 50%);
+  --border-color: color-mix(in srgb, var(--border-color-raw) 50%, currentColor 50%);
+  --border-subtle: color-mix(in srgb, var(--border-subtle-raw) 50%, currentColor 50%);
 
   /* Maximum shadows */
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -652,7 +661,7 @@ body.contrast-maximum.light {
   --shadow-lg: 0 10px 32px rgba(0, 0, 0, 0.3);
 
   /* Slightly darker backgrounds for more separation */
-  --bg-tertiary: color-mix(in srgb, var(--bg-tertiary) 95%, black 5%);
+  --bg-tertiary: color-mix(in srgb, var(--bg-tertiary-raw) 95%, black 5%);
 }
 
 body.contrast-maximum.dark {
@@ -664,13 +673,15 @@ body.contrast-maximum.dark {
   /* Very strong borders */
   --border-color: rgba(255, 255, 255, 0.2);
 
-  /* Maximum brightness and glow */
-  filter: brightness(1.15) contrast(1.1);
+  /* Maximum brightness simulation */
+  --bg-primary: color-mix(in srgb, var(--bg-primary-raw) 85%, white 15%);
+  --bg-secondary: color-mix(in srgb, var(--bg-secondary-raw) 85%, white 15%);
+  --border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Smooth transitions for contrast changes */
 body {
-  transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Ensure text remains crisp with contrast adjustments */

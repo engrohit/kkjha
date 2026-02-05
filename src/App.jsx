@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext.jsx';
 import TopNavbar from './components/layout/TopNavbar.jsx';
+import BottomNavbar from './components/layout/BottomNavbar.jsx';
 import Footer from './components/layout/Footer.jsx';
 import PWAInstallFab from './components/ui/PWAInstallFab.jsx';
 import ScrollButtons from './components/ui/ScrollButtons.jsx';
@@ -28,8 +29,9 @@ function ScrollToTop() {
 function App() {
   return (
     <ThemeProvider>
-      <div className="selection:bg-neon-cyan selection:text-deep-navy min-h-screen">
+      <div className="selection:bg-neon-cyan selection:text-deep-navy min-h-screen pt-24 pb-20 md:pb-0">
         <TopNavbar />
+        <BottomNavbar />
         <PWAInstallFab />
         <ScrollButtons />
         <ScrollToTop />
