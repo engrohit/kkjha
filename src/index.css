@@ -52,28 +52,117 @@ body.theme-crimson {
   --glass-bg: rgba(220, 20, 60, 0.05);
 }
 
-/* Light Mode Overrides - Only backgrounds and text, preserve theme accents */
-body.light {
-  --bg-primary: #f0f4f8;
+/* Light Mode - Cyber Future Theme */
+body.light.theme-cyber {
+  /* Cool, professional blue-gray palette with high contrast */
+  --bg-primary: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
   --bg-secondary: #ffffff;
-  --text-primary: #0a192f;
-  --text-secondary: #4a5568;
-  --text-highlight: #000000;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  /* accent-primary and accent-glow are inherited from theme classes */
+  --bg-tertiary: #f8fbfd;
+  --text-primary: #1a2332;
+  --text-secondary: #4a5f7a;
+  --text-tertiary: #6b7f99;
+  --text-highlight: #0a1628;
+  --accent-primary: #0066cc;
+  --accent-secondary: #0052a3;
+  --accent-glow: #00a8ff;
+  --accent-soft: #e6f2ff;
+  --border-color: rgba(0, 102, 204, 0.12);
+  --border-subtle: rgba(74, 95, 122, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --shadow-sm: 0 1px 3px rgba(0, 102, 204, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 102, 204, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 102, 204, 0.16);
+}
+
+/* Light Mode - Royal Velvet Theme */
+body.light.theme-royal {
+  /* Warm, luxurious purple-gold palette with rich tones */
+  --bg-primary: linear-gradient(135deg, #faf8f5 0%, #f5f0eb 100%);
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fdfbf8;
+  --text-primary: #2d1f3d;
+  --text-secondary: #5a4466;
+  --text-tertiary: #7a6580;
+  --text-highlight: #1a0f26;
+  --accent-primary: #9333ea;
+  --accent-secondary: #7928ca;
+  --accent-glow: #d4af37;
+  --accent-soft: #f3e8ff;
+  --border-color: rgba(147, 51, 234, 0.12);
+  --border-subtle: rgba(90, 68, 102, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --shadow-sm: 0 1px 3px rgba(147, 51, 234, 0.08);
+  --shadow-md: 0 4px 12px rgba(147, 51, 234, 0.12);
+  --shadow-lg: 0 8px 24px rgba(147, 51, 234, 0.16);
+}
+
+/* Light Mode - Emerald City Theme */
+body.light.theme-emerald {
+  /* Fresh, natural green palette with organic feel */
+  --bg-primary: linear-gradient(135deg, #f0f9f4 0%, #e8f5ed 100%);
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f7fcf9;
+  --text-primary: #1a3329;
+  --text-secondary: #2d5a47;
+  --text-tertiary: #4a7a63;
+  --text-highlight: #0f1f18;
+  --accent-primary: #10b981;
+  --accent-secondary: #059669;
+  --accent-glow: #84cc16;
+  --accent-soft: #d1fae5;
+  --border-color: rgba(16, 185, 129, 0.12);
+  --border-subtle: rgba(45, 90, 71, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --shadow-sm: 0 1px 3px rgba(16, 185, 129, 0.08);
+  --shadow-md: 0 4px 12px rgba(16, 185, 129, 0.12);
+  --shadow-lg: 0 8px 24px rgba(16, 185, 129, 0.16);
+}
+
+/* Light Mode - Crimson Night Theme */
+body.light.theme-crimson {
+  /* Bold, energetic red palette with warm undertones */
+  --bg-primary: linear-gradient(135deg, #fef2f2 0%, #fce8e8 100%);
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fff8f8;
+  --text-primary: #3d1a1a;
+  --text-secondary: #6b2d2d;
+  --text-tertiary: #8f4545;
+  --text-highlight: #260f0f;
+  --accent-primary: #dc2626;
+  --accent-secondary: #b91c1c;
+  --accent-glow: #f97316;
+  --accent-soft: #fee2e2;
+  --border-color: rgba(220, 38, 38, 0.12);
+  --border-subtle: rgba(107, 45, 45, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --shadow-sm: 0 1px 3px rgba(220, 38, 38, 0.08);
+  --shadow-md: 0 4px 12px rgba(220, 38, 38, 0.12);
+  --shadow-lg: 0 8px 24px rgba(220, 38, 38, 0.16);
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Dark mode animated gradient background */
+body.dark {
   background: radial-gradient(circle at 50% 50%, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   background-size: 200% 200%;
   animation: bgPulse 15s ease infinite;
-  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Light mode static gradient background */
+body.light {
+  background: var(--bg-primary);
+  animation: none;
 }
 
 @keyframes bgPulse {
@@ -90,30 +179,71 @@ body {
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
+/* Custom Scrollbar - Dark Mode */
+body.dark::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #0a192f;
+body.dark::-webkit-scrollbar-track {
+  background: var(--bg-primary);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #007bff;
+body.dark::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #0056b3;
+body.dark::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-glow);
 }
 
-/* Glassmorphism Utilities (optional if not using Tailwind classes for everything) */
+/* Custom Scrollbar - Light Mode */
+body.light::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.light::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+body.light::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+  opacity: 0.7;
+}
+
+body.light::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+  opacity: 1;
+}
+
+/* Glassmorphism Utilities */
 .glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark .glass-panel {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.light .glass-panel {
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel:hover {
+  border-color: var(--accent-primary);
+}
+
+body.light .glass-panel:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 @keyframes shimmer {
