@@ -58,7 +58,7 @@ const Hero = () => {
                             <div className="aspect-square rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 mb-6 overflow-hidden border-2 border-[var(--accent-primary)] shadow-[0_0_20px_var(--accent-glow)] relative group">
                                 {/* Subtle overlay for depth */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/5 dark:from-black/40 dark:via-transparent dark:to-white/5" />
-                                <img src="/dist/logo.png" alt="KKJ Profile" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 logo-theme-effect" />
+                                <img src="./logo.png" alt="KKJ Profile" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 logo-theme-effect" />
                             </div>
                             <div className="space-y-2">
                                 <div className="h-2 w-24 bg-cyber-blue/50 rounded-full" />
