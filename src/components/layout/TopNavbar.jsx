@@ -101,7 +101,7 @@ const TopNavbar = () => {
                         whileTap={{ scale: 0.95 }}
                         className="relative w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-white dark:bg-slate-800 border-2 border-[var(--accent-primary)] shadow-[0_0_10px_var(--accent-glow)] overflow-hidden icon-theme-effect"
                     >
-                        <img src="/favicon.png" alt="KKJ" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                        <img src="./logo.png" alt="KKJ" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
                     </motion.div>
                     <div className="flex flex-col">
                         <h1 className="text-xl md:text-2xl font-serif font-bold text-slate-800 dark:text-white leading-none tracking-tight group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
