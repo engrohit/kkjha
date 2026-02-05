@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaHome, FaRocket, FaHandshake, FaBook, FaEnvelope } from 'react-icons/fa';
+import InstallPWA from '../common/InstallPWA';
 
 const navItems = [
     { id: 'hero', icon: <FaHome />, label: 'Home' },
@@ -45,6 +46,8 @@ const Navbar = () => {
                         )}
                     </button>
                 ))}
+                <div className="w-px h-6 bg-slate-700 mx-2" />
+                <InstallPWA />
             </motion.div>
         </div>
     );
