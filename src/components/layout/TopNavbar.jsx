@@ -85,11 +85,11 @@ const TopNavbar = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
             className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[98%] max-w-7xl rounded-2xl transition-all duration-300 ${scrolled
-                ? 'bg-white/80 dark:bg-deep-navy/80 backdrop-blur-xl shadow-lg border border-white/20 dark:border-white/10'
-                : 'bg-white/50 dark:bg-deep-navy/50 backdrop-blur-md border border-white/10 dark:border-white/5 shadow-sm'
+                ? 'bg-white/90 dark:bg-deep-navy/80 backdrop-blur-xl shadow-lg border border-slate-200/50 dark:border-white/10'
+                : 'bg-white/70 dark:bg-deep-navy/50 backdrop-blur-md border border-slate-200/30 dark:border-white/5 shadow-sm'
                 }`}
         >
-            <div className="px-2 py-2 md:px-6 md:py-3 flex flex-wrap md:flex-nowrap justify-between items-center gap-2 relative">
+            <div className="px-2 py-2 md:px-6 md:py-3 flex flex-nowrap justify-between items-center gap-2 relative">
 
                 {/* 1. Brand / Logo Area */}
                 <Link
@@ -104,10 +104,10 @@ const TopNavbar = () => {
                         <img src="./logo.png" alt="KKJ" className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
                     </motion.div>
                     <div className="flex flex-col">
-                        <h1 className="text-xl md:text-2xl font-serif font-bold text-slate-800 dark:text-white leading-none tracking-tight group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                        <h1 className="text-xl md:text-2xl font-serif font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-white dark:via-slate-100 dark:to-white bg-clip-text text-transparent leading-none tracking-tight group-hover:from-green-600 group-hover:via-green-500 group-hover:to-green-600 dark:group-hover:from-green-400 dark:group-hover:via-green-300 dark:group-hover:to-green-400 transition-all duration-300">
                             Krishan
                         </h1>
-                        <h1 className="text-sm md:text-lg font-serif font-medium text-slate-600 dark:text-slate-300 leading-none tracking-tight">
+                        <h1 className="text-sm md:text-lg font-serif font-medium text-slate-700 dark:text-slate-300 leading-none tracking-tight group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                             Kant Jha
                         </h1>
                     </div>
